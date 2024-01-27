@@ -1,0 +1,99 @@
+/* Styles pour la Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    background-color: white;
+    color: #fff;
+    z-index: 1000;
+}
+
+.logo img {
+    max-height: 50px;
+}
+.login-button {
+    position:relative;
+    margin-top: -60px; /* Ajoutez la valeur souhaitée pour le margin-top */
+    /* Autres styles de votre bouton */
+}
+.nav-links {
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-links a {
+    color: #040303;
+    text-decoration: none;
+    margin: 0 50px;
+    font-weight: bold;
+    transition: color 0.3s;
+    text-align: center;
+}
+
+.nav-links a:hover {
+    color: #066e38;
+}
+
+/* Styles pour le contenu de la page */
+.welcome-container {
+    background-image: url('/assets/img/do4.png');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+    
+    color: #000000;
+    text-align: center;
+    padding: 100px 20px; /* Ajustez la marge intérieure pour le centrage vertical du contenu */
+}
+h1 {
+    font-size: 24px; /* Ajustez la taille de police selon vos besoins */
+    font-weight: bold; /* Mettez en gras */
+    color:#000000;
+}
+
+p {
+    color: #000000;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+
+
+.feature-description {
+    text-align: center;
+    margin-bottom: 40px;
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+    // padding-left: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 2px solid #060606;
+    border-radius: 5px;
+    color: #fcf7f4;
+    background-color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #0a820a;
+    color: #f66a06;
+}

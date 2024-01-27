@@ -1,0 +1,212 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    .profile-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 70px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 80vh;
+    width: 400px;
+    padding: 48px;
+    background-color: var(--white);
+    border: 1px solid var(--light-grey);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    width: 240px;
+
+    .input {
+        width: 240px;
+    }
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.h3 {
+    margin-bottom: 8px;
+}
+
+.btn {
+    height: 50px;
+    padding: 0 18px;
+    width: 240px;
+    color: var(--white);
+    background-color: var(--accent);
+
+    &:hover {
+        background-color: var(--accent-hover);
+    }
+}
+
+.img-crop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+.cropper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 12px;
+    width: 140px;
+
+    .image-cropper-box {
+        max-height: 160px;
+        width: 140px;
+    }
+}
+
+.btn-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 140px;
+    border: 2px dashed var(--accent);
+    color: var(--accent);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+        color: var(--black);
+        border: 2px dashed var(--black);
+    }
+}
+
+.edit-photo {
+    position: relative;
+
+    .prof-photo {
+        width: 140px;
+        border-radius: 50%;
+    }
+}
+
+.edit-photo-btn {
+    display: flex;
+    position: absolute;
+    right: 12px;
+    bottom: 4px;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border: 0;
+    color: var(--white);
+    background-color: var(--black);
+    z-index: 99;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+        background-color: var(--accent);
+    }
+
+    .btn-round {
+        cursor: pointer;
+    }
+}
+
+.file-input {
+    margin: 0 auto;
+}
+
+.img-box {
+    border-radius: 50%;
+}
+
+#upload-photo {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+@media only screen and (max-width: 1600px) {
+    .profile {
+        padding: 36px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .profile-container .profile-box {
+        height: 100%;
+        width: 100%;
+        padding: 18px;
+    }
+
+    .profile {
+        padding: 24px;
+        width: 400px;
+    }
+
+    .btn-upload {
+        height: 180px;
+        width: 180px;
+    }
+
+    .button-box,
+    .cropper,
+    .btn {
+        width: 180px;
+    }
+
+    .input-box {
+        width: 180px;
+    
+        .input {
+            width: 180px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .profile-container .profile-box {
+        align-items: flex-start;
+        padding-top: 88px;
+    }
+
+    .profile {
+        padding: 18px;
+        width: 100%;
+        height: 100%;
+    }
+}

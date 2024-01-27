@@ -1,0 +1,81 @@
+<div class="card">
+<div class="card-body">
+<div class="header">
+    <h1 class="fs-2 m-0">{{dialogTitle}}</h1>
+    <button mat-dialog-close class="close-btn">
+        <mat-icon>clear</mat-icon>
+    </button>
+</div>
+<p class="mt-2">Que voulez vous faire ?</p>
+<div mat-dialog-content>
+    <form [formGroup]="todoForm" class="form" (ngSubmit)="addTodo()">
+
+        <mat-form-field appearance="outline" color="primary" floatLabel="always">
+            <mat-label>Categorie</mat-label>
+            <mat-select formControlName="category"  required>
+                <mat-option *ngFor="let categorie of categories" [value]="categorie">
+                    <span>{{categorie}}</span>
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="category?.errors?.['required']">Choisissez une categorie s'il vous plait</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary" floatLabel="always">
+            <mat-label>description de la tache</mat-label>
+            <textarea formControlName="task" minlength="2" matInput  required></textarea>
+            <mat-error *ngIf="task?.errors?.['required']">Une description est requise</mat-error>
+            <mat-error *ngIf="task?.touched && task?.errors?.['minlength']">La longueur de la tâche doit comporter au moins 2 caractères</mat-error>
+            <mat-error *ngIf="task?.touched && task?.errors?.['maxlength']">La longueur de la tâche doit être de 70 caractères ou moins</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary" floatLabel="always">
+            <mat-label>Choisi une date</mat-label>
+            <input matInput [min]="minDate" [matDatepicker]="picker" formControlName="date" maxlength="10"  required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="date?.errors?.['required']">La date est requise</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary" floatLabel="always">
+            <mat-label>Priorité</mat-label>
+            <mat-select formControlName="priority" required>
+                <mat-option *ngFor="let priority of priorities" [value]="priority">
+                    <span>{{ priority | priority }}</span>
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="priority?.errors?.['required']">Veuillez sélectionner la priorité</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary" floatLabel="always">
+            <mat-label></mat-label>
+            <mat-chip-list #chipList aria-label="Tag selection">
+                <mat-chip *ngFor="let tag of tagsList" color="accent" class="tag" (removed)="removeTag(tag)" selected>
+                    {{tag}}
+                    <button matChipRemove>
+                      <mat-icon>retour</mat-icon>
+                    </button>
+                </mat-chip>
+                <input placeholder="Entrer un nouveau tag"
+                        *ngIf="!cantAddTag"
+                        minlength="2"
+                        maxlength="14"
+                        [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        [matChipInputAddOnBlur]="addOnBlur"
+                        (matChipInputTokenEnd)="addTag($event)"
+                        required>
+            </mat-chip-list>
+        </mat-form-field>
+
+        <div mat-dialog-action [align]="'end'">
+            <button [disabled]="!todoForm.valid || !tagsList.length" mat-flat-button type="submit" class="submit-btn btn-main">{{actionBtn}}</button>
+        </div>
+
+    </form>
+</div>
+</div>
+</div>
+
+
+
+

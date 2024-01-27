@@ -1,0 +1,29 @@
+/* Stylisation du footer */
+.footer {
+    background-color: #333; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte du footer */
+    padding: 20px 0; /* Espace intérieur du footer */
+    text-align: center; /* Alignement du texte au centre */
+}
+
+.container {
+    max-width: 1200px; /* Largeur maximale du contenu du footer */
+    margin: 0 auto; /* Centrer le contenu du footer dans la page */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style du lien dans le footer (si vous en avez) */
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style pour le survol du lien dans le footer */
+.footer-content a:hover {
+    text-decoration: underline;
+}

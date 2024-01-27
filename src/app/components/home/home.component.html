@@ -1,0 +1,43 @@
+<!-- Navbar Component -->
+<div class="navbar">
+    <div class="logo">
+        <img src="assets/img/do3.png" alt="Logo">
+    </div>
+    <div class="nav-links">
+        <a routerLink="/">Nous contacter</a>
+        <a routerLink="/">A propos</a>
+        <a routerLink="/login">
+            <button class="login-button" (click)="redirectToLogin()">Connexion</button>
+        </a>
+        <!-- Ajoutez d'autres liens de navigation selon vos besoins -->
+    </div>
+    
+</div>
+
+<br>
+<br>
+
+<!-- Contenu de la page -->
+<div class="welcome-container">
+    <h1>Bienvenue sur Votre Site de Gestion des Tâches</h1>
+    <p>Découvrez une plateforme puissante pour organiser et gérer vos tâches efficacement.</p>
+    <br>
+    <br>
+    <div class="feature-description">
+        <p><strong>Fonctionnalités :</strong></p>
+        <ul>
+            <li>Créez et suivez vos listes de tâches.</li>
+            <li>Afficher la liste des tâches</li>
+            <li>Marquer une tâche comme terminée 
+            </li>
+            <li>Modifier une tâche 
+            </li>
+            <li>Supprimer une tâche</li>
+        </ul>
+    </div>
+
+    <div class="button-container">
+        <!-- <button class="login-button" (click)="redirectToLogin()">Connexion</button> -->
+        <button class="signup-button" (click)="redirectToSignup()">Commencer</button>
+    </div>
+</div>
